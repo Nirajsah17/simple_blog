@@ -1,0 +1,38 @@
+{% extends 'user/base.html'%}
+{% block content %}
+    <div class="container">
+      <center><div class="signupdiv">
+        <form method="POST">
+          {% csrf_token %}
+          <fieldset>
+            <h3>SignUp</h3><br>
+          </fieldset>
+          <div class="mb-3">
+            <input type="text" class="form-control"name="fname" placeholder="First name" required>
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-control"name="lname" placeholder="Last name" required>
+          </div>
+          <div class="mb-3">
+            <input type="email" class="form-control"name="email" placeholder="Email" required>
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control"name="password1" placeholder="Password" required>
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control"name="password2" placeholder="Confirm Password" required>
+          </div>
+          <div class="mb-3">
+            <input type="submit" class="btn btn-success"value="SignUp">
+          </div>
+          <div class="mb-3">
+           <a href="{% url 'login' %}">Already have an account ? Login</a>
+          </div>
+          {% if msg %}
+          <p class="alert alert-danger">{{msg}}</p>
+          {% endif %}
+        </form>
+      </div>
+    </center>
+    </div>
+{% endblock %}

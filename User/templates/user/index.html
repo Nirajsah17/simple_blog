@@ -1,0 +1,18 @@
+
+{% extends 'user/base.html' %}
+
+{% block content %}
+{% for p in post %}
+<div class="card container p-4 mb-3 mt-3">
+  <h5 class="card-header">{{p.users}}</h5>
+  <div class="card-body">
+    <h5 class="card-title">{{p.created_at}}</h5>
+    <p class="card-text">{{p.text}}</p>
+    <a href="#" class="btn btn-primary">view</a>
+  </div>
+</div>
+{% endfor %}
+{% if msg %}
+<p style="color:white">{{msg}}</p>
+{% endif %}
+{% endblock %}

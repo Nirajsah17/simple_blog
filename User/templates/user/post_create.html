@@ -1,0 +1,22 @@
+{% extends 'user/base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>create post</title>
+</head>
+<body>
+	<div>
+		<form method="POST">
+			{% csrf_token %}
+			<fieldset>Create Your Post</fieldset>
+			{{form.as_p}}
+			<button type="submit">Submit</button>
+		</form>
+	</div>
+
+</body>
+</html>
+{% endblock %}
